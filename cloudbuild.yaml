@@ -6,11 +6,11 @@ steps:
     args:
       - '-c'
       - |
-        @guru:registry=https://us-central1-npm.pkg.dev/guru-playground/testnpm/
-        //us-central1-npm.pkg.dev/guru-playground/testnpm/:_password=""
-        //us-central1-npm.pkg.dev/guru-playground/testnpm/:username=oauth2accesstoken
-        //us-central1-npm.pkg.dev/guru-playground/testnpm/:email=not.valid@email.com
-        //us-central1-npm.pkg.dev/guru-playground/testnpm/:always-auth=true
+        echo '@guru:registry=https://us-central1-npm.pkg.dev/guru-playground/testnpm/' > .npmrc
+        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:_password=""' >> .npmrc
+        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:username=oauth2accesstoken' >> .npmrc
+        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:email=not.valid@email.com' >> .npmrc
+        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:always-auth=true' >> .npmrc
   # publish pilets using node script
   - name: node:lts-alpine
     id: npm-access
