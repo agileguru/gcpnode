@@ -14,12 +14,12 @@ steps:
   # publish pilets using node script
   - name: node:lts-alpine
     id: npm-access
-    entrypoint: sh
+#    entrypoint: sh
     args:
-      - '-c'
-      - |
+#      - '-c'
+#      - |
         npx google-artifactregistry-auth .npmrc
-        cat .npmrc
+#        cat .npmrc
 
 substitutions:
   _NPM_ARTIFACT_DOMAIN: 'europe-west2-npm.pkg.dev'
