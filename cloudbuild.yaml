@@ -18,8 +18,8 @@ steps:
     args:
       - '-c'
 #      - |
-      - npx google-artifactregistry-auth .npmrc
-      - cat .npmrc
+         npx google-artifactregistry-auth .npmrc
+         cat .npmrc
 
 substitutions:
   _NPM_ARTIFACT_DOMAIN: 'europe-west2-npm.pkg.dev'
