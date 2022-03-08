@@ -1,16 +1,16 @@
 steps:
   # initialise NPM config
-  - name: bash
+  - name: node:lts-alpine
     id: npm-init
-#    entrypoint: sh
+    entrypoint: sh
     args:
       - '-c'
       - |
-        echo "@$_NPM_ARTIFACT_SCOPE:registry=https://$_NPM_ARTIFACT_DOMAIN/$PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/" > .npmrc
-        echo "//$_NPM_ARTIFACT_DOMAIN/$_MGT_PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/:_password=\"\"" >> .npmrc
-        echo "//$_NPM_ARTIFACT_DOMAIN/$_MGT_PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/:username=oauth2accesstoken" >> .npmrc
-        echo "//$_NPM_ARTIFACT_DOMAIN/$_MGT_PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/:email=not.valid@email.com" >> .npmrc
-        echo "//$_NPM_ARTIFACT_DOMAIN/$_MGT_PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/:always-auth=true" >> .npmrc
+        @guru:registry=https://us-central1-npm.pkg.dev/guru-playground/testnpm/
+        //us-central1-npm.pkg.dev/guru-playground/testnpm/:_password=""
+        //us-central1-npm.pkg.dev/guru-playground/testnpm/:username=oauth2accesstoken
+        //us-central1-npm.pkg.dev/guru-playground/testnpm/:email=not.valid@email.com
+        //us-central1-npm.pkg.dev/guru-playground/testnpm/:always-auth=true
   # publish pilets using node script
   - name: node:lts-alpine
     id: npm-access
