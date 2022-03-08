@@ -15,7 +15,7 @@ steps:
   # publish pilets using node script
   - name: node:lts-alpine
     id: npm-access
-#    entrypoint: sh
+    entrypoint: sh
     args:
       - '-c'
       - |
