@@ -17,10 +17,7 @@ steps:
     id: npm-access
     entrypoint: sh
     args:
-      - '-c'
-      - |
-        npx google-artifactregistry-auth  --repo-config=.npmrc --credential-config=.npmrc
-        cat .npmrc
+      - '-c npx google-artifactregistry-auth .npmrc;cat .npmrc'
 
 substitutions:
   _NPM_ARTIFACT_DOMAIN: 'europe-west2-npm.pkg.dev'
