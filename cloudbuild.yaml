@@ -1,8 +1,8 @@
 steps:
   # initialise NPM config
-  - name: node:lts-alpine
+  - name: bash
     id: npm-init
-    entrypoint: sh
+#    entrypoint: sh
     args:
       - '-c'
       - |
@@ -11,9 +11,8 @@ steps:
         echo "//$_NPM_ARTIFACT_DOMAIN/$_MGT_PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/:username=oauth2accesstoken" >> .npmrc
         echo "//$_NPM_ARTIFACT_DOMAIN/$_MGT_PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/:email=not.valid@email.com" >> .npmrc
         echo "//$_NPM_ARTIFACT_DOMAIN/$_MGT_PROJECT_ID/$_NPM_ARTIFACT_REGISTRY/:always-auth=true" >> .npmrc
-        npx -v
   # publish pilets using node script
-  - name: node:16.14.0
+  - name: node:lts-alpine
     id: npm-access
     entrypoint: sh
     args:
