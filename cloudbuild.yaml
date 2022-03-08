@@ -17,7 +17,7 @@ steps:
     id: npm-access
     entrypoint: sh
     args:
-      - '-c
+      - '-c'
       - |
         npx google-artifactregistry-auth .npmrc
         cat .npmrc
