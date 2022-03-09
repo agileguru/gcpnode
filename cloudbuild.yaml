@@ -19,6 +19,7 @@ steps:
       - '-c'
       - |
          ls -la
+         du -h TestLarge.pptx
 #        npx google-artifactregistry-auth .npmrc
 #        cat .npmrc
 
