@@ -12,8 +12,8 @@ steps:
         echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:email=not.valid@email.com' >> .npmrc
         echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:always-auth=true' >> .npmrc
   # publish pilets using node script
-  - name: gitlfs/build-dockers
-    id: npm-access
+  - name: gitlfs/build-dockers:debian_7 
+    id: git-lfs
     entrypoint: sh
     args:
       - '-c'
