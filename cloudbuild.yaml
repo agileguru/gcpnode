@@ -19,7 +19,7 @@ steps:
       - '-c'
       - |
          ls -la
-         git lfs install
+         git-lfs pull
          du -h TestLarge.pptx
 #        npx google-artifactregistry-auth .npmrc
 #        cat .npmrc
