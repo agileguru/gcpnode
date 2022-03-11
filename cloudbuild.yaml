@@ -7,7 +7,7 @@ steps:
       - '-c'
       - |
         ls -la
-  # publish pilets using node script
+  # pull lfs files 
   - name: jgpelaez/git-lfs:latest
     id: git-lfs-pull
     entrypoint: sh
