@@ -1,19 +1,15 @@
 steps:
   # initialise NPM config
-  - name: node:lts-alpine
-    id: npm-init
+  - name: bash
+    id: checkout
     entrypoint: sh
     args:
       - '-c'
       - |
-        echo '@guru:registry=https://us-central1-npm.pkg.dev/guru-playground/testnpm/' > .npmrc
-        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:_password=""' >> .npmrc
-        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:username=oauth2accesstoken' >> .npmrc
-        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:email=not.valid@email.com' >> .npmrc
-        echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:always-auth=true' >> .npmrc
+        ls -la
   # publish pilets using node script
   - name: jgpelaez/git-lfs:latest
-    id: git-lfs
+    id: git-lfs-pull
     entrypoint: sh
     args:
       - '-c'
@@ -21,11 +17,3 @@ steps:
          ls -la
          git lfs pull
          du -h TestLarge.pptx
-#        npx google-artifactregistry-auth .npmrc
-#        cat .npmrc
-
-substitutions:
-  _NPM_ARTIFACT_DOMAIN: 'europe-west2-npm.pkg.dev'
-  _NPM_ARTIFACT_REGISTRY: 'guru-central-npm'
-  _NPM_ARTIFACT_SCOPE: 'guru-playground'
-  _MGT_PROJECT_ID: 'guru-playground'
