@@ -12,14 +12,14 @@ steps:
         echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:email=not.valid@email.com' >> .npmrc
         echo '//us-central1-npm.pkg.dev/guru-playground/testnpm/:always-auth=true' >> .npmrc
   # publish pilets using node script
-  - name: gitlfs/build-dockers:debian_7 
+  - name: jgpelaez/git-lfs:latest
     id: git-lfs
     entrypoint: sh
     args:
       - '-c'
       - |
          ls -la
-         git-lfs pull
+         git lfs pull
          du -h TestLarge.pptx
 #        npx google-artifactregistry-auth .npmrc
 #        cat .npmrc
