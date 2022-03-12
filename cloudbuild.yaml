@@ -8,12 +8,12 @@ steps:
       - |
         ls -la
   # pull lfs files 
-  - name: jgpelaez/git-lfs:latest
-    id: git-lfs-pull
-    entrypoint: sh
-    args:
-      - '-c'
-      - |
-         ls -la
-         git lfs pull
-         du -h TestLarge.pptx
+  # - name: jgpelaez/git-lfs:latest
+  #   id: git-lfs-pull
+  #   entrypoint: sh
+  #   args:
+  #     - '-c'
+  #     - |
+  #        ls -la
+  #        git lfs pull
+  #        du -h TestLarge.pptx
